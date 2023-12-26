@@ -38,7 +38,7 @@ from ray.rllib.utils.typing import (
 from ray.util.debug import log_once
 
 if TYPE_CHECKING:
-    from gymnasium.envs.classic_control.rendering import SimpleImageViewer
+    from ray.rllib.utils.rendering import SimpleImageViewer
 
     from ray.rllib.algorithms.callbacks import DefaultCallbacks
     from ray.rllib.evaluation.rollout_worker import RolloutWorker
@@ -289,7 +289,7 @@ class EnvRunnerV2:
             return None
 
         try:
-            from gymnasium.envs.classic_control.rendering import SimpleImageViewer
+            from ray.rllib.utils.rendering import SimpleImageViewer
 
             return SimpleImageViewer()
         except (ImportError, ModuleNotFoundError):
